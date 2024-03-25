@@ -68,14 +68,36 @@
 </div>
 
 <script>
+function adjustButtonPositions() {
+  // 배경 이미지의 비율 대비 화면 크기를 기준으로 한 위치와 크기 계산
+  var widthRatio = window.innerWidth / 1170;
+  var heightRatio = window.innerHeight / 2532;
+
+  // Button1 위치 및 크기 설정
+  var button1 = document.getElementById("button1");
+  button1.style.left = (25 / 1170) * 100 + '%';
+  button1.style.top = (165 / 2532) * 100 + '%';
+  button1.style.width = (50 / 1170) * window.innerWidth + 'px';
+  button1.style.height = (50 / 2532) * window.innerHeight + 'px';
+
+  // Button2 위치 및 크기 설정
+  var button2 = document.getElementById("button2");
+  button2.style.left = (74 / 1170) * 100 + '%';
+  button2.style.top = (1081 / 2532) * 100 + '%';
+  button2.style.width = (300 / 1170) * window.innerWidth + 'px';
+  button2.style.height = (300 / 2532) * window.innerHeight + 'px';
+}
+
 function openImage() {
   var modal = document.getElementById("myModal");
   var img = document.getElementById("img01");
   modal.style.display = "block";
-  img.src = '최아들인스타게시글.png'; // 여기에 새로운 이미지의 경로를 넣으세요.
+  img.src = '최아들인스타게시글.png'; // 새로운 이미지의 경로
 }
 
-// 이미지나 이미지 외부를 클릭했을 때 모달을 닫는 기능은 추가적인 작업이 필요할 수 있습니다.
+// 화면 로드 및 크기 변경 시 버튼 위치 조정
+window.onload = adjustButtonPositions;
+window.onresize = adjustButtonPositions;
 </script>
 
 </body>
