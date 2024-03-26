@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>설신딸인스타</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeInAnimation 1s ease-out forwards;
+  }
+  .background {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 216.6%; /* 이미지의 높이/너비 비율에 맞춤 */
+    background-image: url('설신딸인스타.png'); /* 초기 배경 이미지 경로 */
+    background-size: cover;
+    background-position: center;
+  }
+  .button {
+    position: absolute;
+    background-color: transparent; /* 투명한 배경 */
+    border: none; /* 테두리 없음 */
+    cursor: pointer;
+    width: calc(380 / 1170 * 100%); /* 버튼 너비 비율 */
+    height: calc(380 / 2532 * 100%); /* 버튼 높이 비율 */
+    top: calc(962 / 2532 * 100%); /* 버튼 상단 위치 비율 */
+    left: 0; /* 버튼은 왼쪽 끝에서 시작 */
+  }
+   .backButton {
+    position: absolute;
+    background-color: transparent; /* 투명한 배경 */
+    border: none; /* 테두리 없음 */
+    cursor: pointer;
+    opacity: 0; /* 완전 투명 */
+    width: calc(50 / 1170 * 100%);
+    height: calc(50 / 2532 * 100%);
+    top: calc(165 / 2532 * 100%);
+    left: calc(25 / 1170 * 100%);
+    display: none; /* 초기에는 뒤로가기 버튼 숨김 */
+  }
+  .goToIndexButton {
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+  width: calc(50 / 1170 * 100%);
+  height: calc(50 / 2532 * 100%);
+  top: calc(165 / 2532 * 100%);
+  left: calc(25 / 1170 * 100%);
+}
+  .button:active {
+    opacity: 0.3; /* 클릭 시 투명도를 30%로 조정 */
+    background-color: blue; /* 클릭 시 배경색을 파란색으로 설정 */
+  }
+  
+  @media (max-width: 768px) {
+    .background {
+      padding-bottom: 216.6%; /* 모바일에서도 배경 이미지 비율 유지 */
+    }
+    .button, .backButton {
+      /* 모바일 화면에서 버튼 크기와 위치 비율 조정 */
+      width: calc(380 / 1170 * 100%);
+      height: calc(380 / 2532 * 100%);
+      top: calc(962 / 2532 * 100%);
+      /* left: 필요하다면 여기서 조정 */
+    }
+    .backButton {
+      width: calc(50 / 1170 * 100%);
+      height: calc(50 / 2532 * 100%);
+      top: calc(165 / 2532 * 100%);
+      left: calc(25 / 1170 * 100%);
+  }
+    .goToIndexButton {
+    width: calc(50 / 1170 * 100%);
+    height: calc(50 / 2532 * 100%);
+    top: calc(165 / 2532 * 100%);
+    left: calc(25 / 1170 * 100%);
+  }
+
+  @keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="background" id="background">
+  <button class="button" onclick="changeImage()"></button>
+  <button class="backButton" onclick="goBack()" style="display:none;">←</button> <!-- 뒤로가기 버튼 추가 -->
+  <button class="goToIndexButton" onclick="goToIndex()">←</button>
+</div>
+
+<script>
+function changeImage() {
+  document.getElementById('background').style.backgroundImage = "url('설신딸인스타게시글.png')";
+  document.querySelector('.backButton').style.display = 'block'; // 뒤로가기 버튼 표시
+  document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
+}
+  
+function goBack() {
+  console.log("goBack 함수 호출됨"); // 디버깅 메시지 출력
+  document.getElementById('background').style.backgroundImage = "url('설신딸인스타.png')";
+  document.querySelector('.backButton').style.display = 'none'; // 뒤로가기 버튼 숨김
+  document.querySelector('.goToIndexButton').style.display = 'block'; // index.html로 돌아가는 버튼 다시 표시
+}
+  
+function goToIndex() {
+  window.location.href = '../index.html'; // 상위 폴더로 이동
+}
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
