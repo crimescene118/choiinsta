@@ -54,6 +54,15 @@
   top: calc(165 / 2532 * 100%);
   left: calc(25 / 1170 * 100%);
 }
+  .changeImageButton {
+  position: absolute;
+  width: calc(50 / 1170 * 100%);
+  height: calc(50 / 2532 * 100%);
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+}
   .button:active {
     opacity: 0.3; /* 클릭 시 투명도를 30%로 조정 */
     background-color: blue; /* 클릭 시 배경색을 파란색으로 설정 */
@@ -95,11 +104,13 @@
   <button class="button" onclick="changeImage()"></button>
   <button class="backButton" onclick="goBack()" style="display:none;">←</button> <!-- 뒤로가기 버튼 추가 -->
   <button class="goToIndexButton" onclick="goToIndex()">←</button>
+  <button class="changeImageButton" onclick="changeImage('설신딸인스타팔로워.PNG')" style="top: calc(125 / 2532 * 100%); left: calc(600 / 1170 * 100%);">팔로워</button>
+  <button class="changeImageButton" onclick="changeImage('설신딸인스타팔로잉.PNG')" style="top: calc(125 / 2532 * 100%); left: calc(800 / 1170 * 100%);">팔로잉</button>
 </div>
 
 <script>
-function changeImage() {
-  document.getElementById('background').style.backgroundImage = "url('설신딸인스타게시글.png')";
+function changeImage(imageName) {
+  document.getElementById('background').style.backgroundImage = "url('" + imageName + "')";
   document.querySelector('.backButton').style.display = 'block'; // 뒤로가기 버튼 표시
   document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
 }
