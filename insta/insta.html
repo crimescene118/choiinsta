@@ -26,6 +26,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    opacity: 0; 
   }
    .backButton {
     position: absolute;
@@ -131,20 +132,24 @@ function changeImage() {
   document.getElementById('background').style.backgroundImage = "url('설신딸인스타게시글.png')";
   document.querySelector('.backButton').style.display = 'block'; // 뒤로가기 버튼 표시
   document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
+  document.querySelector('.newButton1').style.display = 'none';
+  document.querySelector('.newButton2').style.display = 'none';
 }
 
 function changeToFollowersImage() {
   document.getElementById('background').style.backgroundImage = "url('설신딸인스타팔로워.png')";
   document.querySelector('.backButton').style.display = 'block';
   document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
-  hideNewButtons();
+  document.querySelector('.newButton1').style.display = 'none';
+  document.querySelector('.newButton2').style.display = 'none';
 }
 
 function changeToFollowingImage() {
   document.getElementById('background').style.backgroundImage = "url('설신딸인스타팔로잉.png')";
   document.querySelector('.backButton').style.display = 'block';
   document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
-  hideNewButtons();
+  document.querySelector('.newButton1').style.display = 'none';
+  document.querySelector('.newButton2').style.display = 'none';
 }  
   
 function goBack() {
@@ -152,15 +157,9 @@ function goBack() {
   document.getElementById('background').style.backgroundImage = "url('설신딸인스타.png')";
   document.querySelector('.backButton').style.display = 'none'; // 뒤로가기 버튼 숨김
   document.querySelector('.goToIndexButton').style.display = 'block'; // index.html로 돌아가는 버튼 다시 표시
+  document.querySelector('.newButton1').style.display = 'block';
+  document.querySelector('.newButton2').style.display = 'block';
 }
-
-function hideNewButtons() {
-  document.querySelectorAll('.newButton').forEach(btn => btn.style.display = 'none');
-}
-
-function showNewButtons() {
-  document.querySelectorAll('.newButton').forEach(btn => btn.style.display = 'block');
-}  
   
 function goToIndex() {
   window.location.href = '../index.html'; // 상위 폴더로 이동
