@@ -136,12 +136,14 @@ function changeImage() {
 function changeToFollowersImage() {
   document.getElementById('background').style.backgroundImage = "url('설신딸인스타팔로워.png')";
   document.querySelector('.backButton').style.display = 'block';
+  document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
   hideNewButtons();
 }
 
 function changeToFollowingImage() {
   document.getElementById('background').style.backgroundImage = "url('설신딸인스타팔로잉.png')";
   document.querySelector('.backButton').style.display = 'block';
+  document.querySelector('.goToIndexButton').style.display = 'none'; // index.html로 돌아가는 버튼 숨김
   hideNewButtons();
 }  
   
