@@ -93,7 +93,7 @@
   <button class="button button1" onclick="window.open('insta/insta.html', '_self')"></button>
   <button class="button button2" onclick="window.open('kakao/kakao.html', '_self')"></button>
   <button class="button button3" onclick="showImage()"></button>
-  <button class="button button4" onclick="window.open('msg/msg.html', '_self')"></button>
+  <button class="button button4" onclick="showAnotherImage()"></button>
   <button class="backButton" id="backButton" onclick="goBack()"></button>
 </div>
 
@@ -110,6 +110,17 @@ function showImage() {
   document.querySelector('.button3').style.display = 'none';
   document.querySelector('.button4').style.display = 'none';
 }
+
+function showAnotherImage() {
+  const background = document.getElementById('background');
+  background.style.backgroundImage = "url('설신딸문자.png')";
+  background.classList.add('fadeIn'); // 애니메이션 클래스 추가
+  document.getElementById('backButton').style.display = 'block'; // 뒤로가기 버튼 표시
+  document.querySelector('.button1').style.display = 'none';
+  document.querySelector('.button2').style.display = 'none';
+  document.querySelector('.button3').style.display = 'none';
+  document.querySelector('.button4').style.display = 'none';
+}  
 
 function goBack() {
   const background = document.getElementById('background');
